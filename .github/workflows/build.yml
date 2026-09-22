@@ -20,11 +20,11 @@ jobs:
       run: |
         cd WeaponCustom
         if [ ! -f "./gradlew" ]; then
-          echo "gradlew missing, setting up Gradle..."
-          wget -q https://services.gradle.org/distributions/gradle-8.8-bin.zip
-          unzip -q gradle-8.8-bin.zip
-          export PATH=$PWD/gradle-8.8/bin:$PATH
-          gradle wrapper
+          echo "gradlew missing, setting up Gradle 8.7..."
+          wget -q https://services.gradle.org/distributions/gradle-8.7-bin.zip
+          unzip -q gradle-8.7-bin.zip
+          export PATH=$PWD/gradle-8.7/bin:$PATH
+          gradle wrapper --gradle-version 8.7
         fi
         chmod +x ./gradlew
         ./gradlew build -Dorg.gradle.java.home="$JAVA_HOME"
