@@ -4,7 +4,6 @@ on: [push, pull_request]
 
 jobs:
   build:
-  # Using windows-latest or ubuntu-latest works fine, but let's target ubuntu with Java 21
     runs-on: ubuntu-latest
 
     steps:
@@ -18,13 +17,14 @@ jobs:
         distribution: 'temurin'
 
     - name: Grant execute permission for gradlew
-      run: chmod +x WeaponCustom/gradlew
+      run: chmod +x ./WeaponCustom/gradlew
 
     - name: Build with Gradle
-      run: cd WeaponCustom && ./gradlew build
+      working-directory: ./WeaponCustom
+      run: ./gradlew build
 
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v4
       with:
         name: mod-jar
-        path: WeaponCustom/build/libs/*.jar
+        path: ./WeaponCustom/build/libs/*.jar
