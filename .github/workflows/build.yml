@@ -18,6 +18,7 @@ jobs:
 
     - name: Generate gradlew if missing and Build
       run: |
+        cd WeaponCustom
         if [ ! -f "./gradlew" ]; then
           echo "gradlew missing, setting up Gradle..."
           wget -q https://services.gradle.org/distributions/gradle-8.8-bin.zip
@@ -32,4 +33,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: mod-jar
-        path: build/libs/*.jar
+        path: WeaponCustom/build/libs/*.jar
