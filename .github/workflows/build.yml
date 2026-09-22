@@ -17,14 +17,13 @@ jobs:
         distribution: 'temurin'
 
     - name: Grant execute permission for gradlew
-      run: chmod +x ./WeaponCustom/gradlew
+      run: chmod +x ./gradlew
 
     - name: Build with Gradle
-      working-directory: ./WeaponCustom
       run: ./gradlew build
 
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v4
       with:
         name: mod-jar
-        path: ./WeaponCustom/build/libs/*.jar
+        path: build/libs/*.jar
