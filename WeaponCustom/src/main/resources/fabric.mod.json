@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "cataclysmarsenal",
+  "version": "${version}",
+  "name": "Cataclysm Arsenal",
+  "description": "A server-authoritative arsenal of custom weapons, knives, abilities and catastrophic combat.",
+  "authors": [
+    "Craftverze"
+  ],
+  "license": "ARR",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "eu.codexe.cataclysmarsenal.CataclysmArsenal"
+    ],
+    "client": [
+      "eu.codexe.cataclysmarsenal.client.CataclysmArsenalClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
