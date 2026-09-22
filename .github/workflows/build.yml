@@ -27,7 +27,7 @@ jobs:
           gradle wrapper
         fi
         chmod +x ./gradlew
-        ./gradlew build
+        ./gradlew build -Dorg.gradle.java.home="$JAVA_HOME"
 
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v4
